@@ -1,0 +1,329 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+
+
+	
+	<head>
+		
+		
+		
+		
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+		<!-- TITLE DYNAMIC ON THIS PAGE
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+
+		<title><!-- COMPANY NAME HERE --> | TorQuest</title>
+
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END TITLE -->
+
+
+
+	
+		<!-- SEO ADD-ON
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+
+		<meta name="description" content="">
+		<meta name="robots" content="noodp">
+		<link rel="canonical" href="http://www.torquest.com/">
+		<meta property="og:locale" content="en_CA">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="">
+		<meta property="og:description" content="">
+		<meta property="og:url" content="{site_url}{current_path}">
+		<meta property="og:site_name" content="TorQuest">
+
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END SEO -->
+	
+	
+	
+
+		<!-- PRELOADER HEADER STYLE ONLY ON SELECT TEMPLATES 
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+		
+		<!-- home, stories/company, team/bios, investments/company, news/article -->
+	
+		<style>
+			#preloader {
+				position: fixed;
+				left: 0;
+				top: 0;
+				z-index: 9999;
+				width: 100%;
+				height: 100%;
+				overflow: visible;
+				background-color: #151F25;
+				background-image: url(_assets/img/brand-tag-wht.svg);
+				-webkit-background-size: 200px 74px;
+				background-size: 200px 74px;
+				background-repeat: no-repeat;
+				background-position: center center;
+			}
+		</style>
+	
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END PRELOADER STYLE -->
+
+
+
+
+		<link rel="stylesheet" href="_assets/css/app.css">
+			
+
+
+			
+		<!-- favicons
+		=========================================================================================== -->
+	
+		<link rel="icon" type="image/png" href="_assets/favicon/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="_assets/favicon/favicon-16x16.png" sizes="16x16" />
+			
+
+
+
+	</head>
+		
+
+	
+	
+	<body class="sham-modal">
+	
+		
+		
+	
+		<!-- PRELOADER ONLY ON SELECT TEMPLATES 
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+		
+		<!-- home, stories/company, team/bios, investments/company, news/articleK -->
+	
+		<div id="preloader"></div>
+	
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END PRELOADER -->
+	
+		
+		
+	
+		<!-- START SINGLE ENTRY FROM company_stories CHANNEL 
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+		
+		
+		<!-- {exp:channel} START LOOP -->	
+		
+		
+			<!-- MODAL VIDEO OVERLAY - NEED A CONDITIONAL TO TEST {story_video_embed} -->
+	
+			<div class="reveal" id="video-modal" data-reveal data-reset-on-close="true">
+				
+				<div class="flex-video widescreen vimeo">
+					
+					<!-- IFRAME VIDEO EMBED CODE -->
+					{story_video_embed}
+		
+				</div>
+				
+				<button class="close-button" data-close aria-label="Close reveal" type="button">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+		
+			<!-- END OF CONDITIONAL -->
+	
+			
+			
+			
+			<div class="close-bar">
+				
+				<div class="row">
+				
+					<div class="medium-4 columns left">
+						<a href="{site_url}stories">Close</a>
+					</div>
+					
+					<!-- COMPANY NAME -->
+					<div class="medium-8 columns right show-for-medium">
+						<span>{story_company_name}</span>
+					</div>
+					
+				</div>
+									
+			</div>	
+	
+		
+		
+			
+			<div class="block story-header content dark">
+		
+				<figure>
+					
+					
+					<!-- MAIN IMAGE AND ALT TEXT-->
+					<img class="full-width" data-interchange="[{story_main_image}_(S).jpg, small], [{story_main_image}_(M).jpg, medium], [{story_main_image}_(L).jpg, large]" alt="{story_company_name}">
+					
+					<figcaption>
+						
+						
+						<!-- IMAGE HEAD, SUBHEAD AND PLAY BUTTON-->
+						<span>
+							
+							<h2>{story_main_image_headline}</h2>
+							
+							<h6>{story_main_image_subhead}</h6>
+							
+							
+							<!-- MODAL TRIGGER BUTTON - NEED A CONDITIONAL TO TEST {story_video_embed} --> 
+							<a data-toggle="video-modal" class="btn-play" href="#"></a>
+							<!-- END OF CONDITIONAL -->
+							
+						</span>
+						
+						
+					</figcaption>
+					
+				</figure>
+				
+			</div>
+	
+		
+		
+			
+			<div class="block padding-7-3-7-3 content light text-center wow fadeIn" data-wow-delay="{lv_wow_delay}ms">
+				
+				<div class="row">
+					
+					<div class="large-10 large-centered xlarge-12 columns">
+						
+						<!-- QUOTE HEADER -->
+						<h6>{story_quote_header}</h6>
+									
+						<!-- QUOTE -->
+						<blockquote>{story_quote}</blockquote>									
+					</div>
+					
+				</div>	
+				
+			</div>
+	
+		
+		
+		
+			<div class="block content light wow fadeIn" data-wow-delay="{lv_wow_delay}ms">
+				
+				<div class="row collapse vertical-center text-center warm-gray-4">
+					
+					
+					<div class="block-bkgrd-img story-logo-vert-center large-6 columns">
+						
+						<!-- COMPANY LOGO AND ALT TEXT-->
+						<img src="{story_company_logo}" alt="{story_company_name}">	
+													
+					</div>
+					
+					
+					<!-- STORY SIDE IMAGE -->
+					<!-- NEED CONDITIONAL TO CHECK IF SIDE IMAGE -->
+					<!-- ELSE DON'T OUTPUT THIS DIV -->
+					<div class="block-bkgrd-img large-6 columns" style="background-image: url({story_side_image});"></div>
+					
+					
+				</div>	
+				
+			</div>
+	
+		
+		
+		
+			<div class="block padding-7-3-7-3 content light wow fadeIn" data-wow-delay="{lv_wow_delay}ms">
+				
+				<div class="row">
+					
+					<div class="large-10 large-centered">
+						
+							
+						<!-- STORY BODY TEXT -->
+						{story_body_text}
+						
+									
+					</div>
+					
+				</div>	
+				
+			</div>
+		
+		
+		<!-- {exp:channel} END LOOP -->	
+
+	
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END SINGLE ENTRY -->
+
+				
+	
+	
+		<!-- START FOOTER 
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+
+		<!-- THIS FOOTER REPEATS ON ALL PAGES AND TAGS ARE LOW VARS (CALL TO ACTION PANEL) -->
+	
+		<footer class="text-center wow fadeIn" data-wow-delay="{lv_wow_delay}ms">
+			
+			<div class="row expanded">
+				
+				<h3>{lv_cta_head}</h3>
+				
+				<p>
+					{lv_cta_phone}
+					<span class="show-for-small-only"><br></span>
+					<span class="bullet">&bull;</span>
+					<a href="mailto:{lv_cta_email}">{lv_cta_email}</a>
+				</p>
+			
+			</div>
+			
+			<div class="row logo">
+				
+				<a href="{site_url}"></a>
+				
+			</div>
+			
+		</footer>
+		
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END FOOTER -->
+
+
+	
+	
+		<!-- font scripts
+		=========================================================================================== -->
+	
+		<script src="https://use.typekit.net/rjh8jhj.js"></script>
+		
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	
+	
+	
+	
+		<!-- app js
+		=========================================================================================== -->
+	
+		<script src="_assets/js/min/app-min.js"></script>
+	
+	
+	
+	
+	</body>
+	
+
+
+
+</html>
+

@@ -1,0 +1,83 @@
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+  
+   FOOTER
+   
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+
+
+
+// footer block ........................................................
+
+footer .row:first-child {
+	background-color: $light-green;
+	padding: 10vw 4vw;
+
+	@include breakpoint(xlarge) {
+		padding: 7rem 0;
+	}
+
+}
+
+
+
+
+// footer type .........................................................
+
+footer h2 {
+	margin-bottom: 1.25rem;
+}
+
+footer p {
+	margin: 0;
+}
+
+footer p span.bullet {
+	
+	display: none;
+	
+	@include breakpoint(medium) {
+		display: inline-block;
+		margin: 0 1rem;
+	}
+}
+
+footer p a {
+	color: $warm-gray-1;
+}
+
+
+
+
+// footer logo .........................................................
+
+footer .logo {
+	padding: 3rem 0 5rem 0;
+}
+
+footer .logo a {
+	width: 10.31rem;
+	height: 3.813rem;
+	display: block;
+	margin: 0 auto;
+	background-image: url('../img/brand-tag-blk.svg');
+	background-repeat: no-repeat;
+	background-size: 10.31rem 3.813rem;
+	background-position: 50% 50%;
+	transition: opacity 0.375s linear;
+}
+
+footer .logo a:after {
+    content: "";
+    display: inline-block;
+    border-bottom: 1px solid $warm-gray-3;
+    width: 40%;
+    height: 5.625rem;
+}
+
+footer .logo a:hover {
+	opacity: 0.6;
+}
+
+
+

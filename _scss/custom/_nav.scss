@@ -1,0 +1,240 @@
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+  
+   NAVIGATION 
+   
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+
+
+
+// for some androids ...................................................
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+
+
+// brand ...............................................................
+
+#brand {
+	position: absolute;
+	left: 2rem;
+	top: 2rem;
+	width: rem-calc(131);
+	height: rem-calc(23);
+	display: block;
+	margin: 0 auto;
+	background-image: url('../img/brand-wht.svg');
+	background-repeat: no-repeat;
+	background-size: rem-calc(131) rem-calc(23);
+	background-position: 50% 50%;
+	transition: top 0.2s;
+	@include breakpoint(medium) {
+		width: rem-calc(164);
+		height: rem-calc(61);
+		background-image: url('../img/brand-tag-wht.svg');
+		background-size: rem-calc(164) rem-calc(61);
+		background-position: 50% 50%;
+	}	    
+}
+
+#brand:hover {
+	opacity: 0.8;
+	transition: opacity 0.375s linear;
+}
+
+#brand.scrolled {
+	top: -4rem;
+}
+
+
+
+
+// nav elements ........................................................
+
+.navbar {
+	position: fixed;
+	z-index: 4000;
+	height: 3rem;
+	width: 100%;
+}
+
+.mobilenav {
+	font-family: inherit;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	margin: 0;
+	opacity: 0.97;
+}
+
+
+
+
+// nav primary list items ..............................................
+
+.mobilenav li {
+    font-family: "adobe-caslon-pro",serif;
+	list-style-type: none;
+	text-align: center;
+	padding: 0.25vh;
+	font-size: 5.5vh;
+	
+	@include breakpoint(medium) {
+		padding: 0.25vh;
+		font-size: 6vh;
+	}
+}
+
+.mobilenav li a {
+	text-decoration: none;
+	color: $warm-gray-2;
+	display: block;
+	width: 100%;
+	transition: color 0.25s linear;
+}
+
+.mobilenav li a.active {
+	color: $dark-gray;
+}
+
+.mobilenav li a:hover {
+	color: $dark-gray;
+}
+
+.mobilenav li:first-child {
+  	margin-top: 12vh;
+  	
+	@include breakpoint(medium) {
+  		margin-top: 8vh;
+	}
+}
+
+.mobilenav li:last-child {
+  	margin-top: 6vh;
+ 	font-size: 3.15vh;
+ 	text-transform: uppercase;
+ 	letter-spacing: 0.3rem;
+}
+
+
+
+
+// nav secondary list items ............................................
+
+.secondary-nav {
+	display: none;
+}
+
+.secondary-nav ul {
+    float: right;
+    margin: 1rem 0 0.25rem 0;
+    font-size: 0.75rem;
+}
+
+.secondary-nav li {
+    display: block;
+    float: left;
+    list-style: none;
+    margin-left: 1.375rem;
+    text-transform: uppercase;
+}
+
+
+
+
+// hamburger ...........................................................
+
+.top-animate {
+	background: #444 !important;
+	top: 13px !important;
+	transform: rotate(45deg);
+}
+
+.mid-animate {
+	opacity: 0;
+}
+
+.bottom-animate {
+	background: #444 !important;
+	top: 13px !important;
+	transform: rotate(-225deg);
+}
+
+.top-menu,
+.mid-menu,
+.bottom-menu {
+	width: 30px;
+	height: 2px;
+	border-radius: 10px;
+	background-color: #fff;
+}
+
+
+#hamburger.dark .top-menu,
+#hamburger.dark .mid-menu,
+#hamburger.dark .bottom-menu {
+	background-color: #fff
+}
+
+#hamburger.light .top-menu,
+#hamburger.light .mid-menu,
+#hamburger.light .bottom-menu {
+	background-color: #000
+}
+
+.top-menu {
+	top: 5px;
+}
+
+.mid-menu {
+	top: 15px;
+}
+
+.bottom-menu {
+	top: 25px;
+}
+
+.menui {
+	transition: 0.8s ease-in;
+	transition-timing-function: linear(.75, 0, 2.29, 1.01);
+	margin-top: 10px;
+	position: absolute;
+}
+
+.dark .menui,
+.light .menui {
+	transition: 0.1s ease;
+}
+
+.icon {
+	z-index: 999;
+	position: absolute;
+	display: block;
+	padding: 9px;
+	height: 36px;
+	width: 36px;
+	margin: 0px;
+	top: 1rem;
+	right: 2.25rem;
+	transition: right 200ms;
+}
+
+.is-reveal-open .icon {
+	right: 2rem;
+}
+
+.noscroll {
+	overflow-y: hidden; 
+}
+
+
+

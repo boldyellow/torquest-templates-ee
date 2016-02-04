@@ -1,0 +1,305 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+
+
+	
+	<head>
+		
+		
+		
+		
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+		<!-- TITLE DYNAMIC ON THIS PAGE
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+
+		<title><!-- COMPANY NAME HERE --> | TorQuest</title>
+
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END TITLE -->
+
+
+
+	
+		<!-- SEO ADD-ON
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+
+		<meta name="description" content="">
+		<meta name="robots" content="noodp">
+		<link rel="canonical" href="http://www.torquest.com/">
+		<meta property="og:locale" content="en_CA">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="">
+		<meta property="og:description" content="">
+		<meta property="og:url" content="{site_url}{current_path}">
+		<meta property="og:site_name" content="TorQuest">
+
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END SEO -->
+	
+	
+	
+
+		<!-- PRELOADER HEADER STYLE ONLY ON SELECT TEMPLATES 
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+		
+		<!-- home, stories/company, team/bios, investments/company, news/article -->
+	
+		<style>
+			#preloader {
+				position: fixed;
+				left: 0;
+				top: 0;
+				z-index: 9999;
+				width: 100%;
+				height: 100%;
+				overflow: visible;
+				background-color: #151F25;
+				background-image: url(_assets/img/brand-tag-wht.svg);
+				-webkit-background-size: 200px 74px;
+				background-size: 200px 74px;
+				background-repeat: no-repeat;
+				background-position: center center;
+			}
+		</style>
+	
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END PRELOADER STYLE -->
+
+
+
+
+		<link rel="stylesheet" href="_assets/css/app.css">
+			
+
+
+			
+		<!-- favicons
+		=========================================================================================== -->
+	
+		<link rel="icon" type="image/png" href="_assets/favicon/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="_assets/favicon/favicon-16x16.png" sizes="16x16" />
+			
+
+
+
+	</head>
+		
+
+	
+	
+	<body class="sham-modal">
+	
+		
+		
+	
+		<!-- PRELOADER ONLY ON SELECT TEMPLATES 
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+		
+		<!-- home, stories/company, team/bios, investments/company, news/articleK -->
+	
+		<div id="preloader"></div>
+	
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END PRELOADER -->
+	
+		
+		
+	
+		<div class="close-bar">
+			
+			<div class="row">
+			
+			
+				<div class="medium-4 columns left">
+					<a href="{site_url}investments">Close</a>
+				</div>
+				
+				
+				<!-- PAGINATION 
+				/////////////////////////////////////////////////////////////////////////////////////////// -->
+				
+				<!-- THIS NEEDS TO USE PREV/NEXT PAGINATION BETWEEN ENTRIES IN companies CHANNEL -->
+				<!-- HIDE PREV ON FIRST ENTRY AND HIDE NEXT ON LAST ENTRY-->
+
+				<div class="medium-8 columns right">
+					<a class="prev" href="{site_url}investments/company/###-PREV-###"></a>
+					<a class="next" href="{site_url}investments/company/###-NEXT-###"></a>
+				</div>
+	
+				<!-- //////////////////////////////////////////////////////////////////////////////////////
+				END PAGINATION -->
+				
+				
+			</div>
+								
+		</div>
+		
+	
+	
+		
+		<!-- START SINGLE ENTRY FROM companies CHANNEL 
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+		
+		
+		<!-- {exp:channel} START LOOP -->	
+		
+		
+			<div class="block padding-10-0-10-0 text-center content light">
+				
+				<div class="row">
+					
+					
+					<div class="medium-12 columns">
+						
+						<!-- COMPANY NAME AND DESCRIPTION -->
+						<h1>{company_name}</h1>
+						<h6>{company_description}</h6>
+					
+					</div>
+						
+				
+				</div>
+				
+			</div>
+		
+		
+		
+			
+			<div class="block content dark">
+				
+				<div class="row">
+
+					<!-- COMPANY IMAGES 1 AND 2 (NO RESIZE NEEDED) -->					
+					<div class="medium-5 columns block-bkgrd-img" style="background-image: url({company_image_1} );"></div>
+					
+					<div class="medium-7 columns block-bkgrd-img" style="background-image: url({company_image_2} );"></div>
+								
+				</div>
+				
+			</div>
+			
+			
+	
+		
+			<div class="block padding-8-0-8-0 content light wow fadeIn" data-wow-delay="{lv_wow_delay}ms">
+				
+				
+				<div class="row large-collapse">
+					
+					
+					<div class="large-7 large-push-5 columns">
+						
+						<!-- STATIC HEADER -->
+						<h4><span>Overview</span></h4>
+						
+						<!-- BODY TEXT -->
+						{company_body_text}
+					
+					</div>
+					
+		
+					<div class="large-3 large-offset-1 large-pull-8 columns reduced-text sidebar">
+						
+						
+						<!-- NOTE: NEED CONDITIONALS TO VERIFY THERE IS CONTENT IN EACH FIELD BELOW -->
+						
+						<h6><span>Location</span></h6>
+						<p>{company_location}</p>
+						
+						<h6><span>Contact</span></h6>
+						<p>{company_contact}</p>
+						
+						<h6><span>Website</span></h6>
+						<p>{company_website}</p>
+						
+						
+						<!-- NOTE: DISPLAY THE CHILD CATEGORIES SEPARATED BY COMMAS -->
+						<!-- THEY DON'T WANT THESE TO BE LINKS OR LINK TO ANY CATEGORY PAGES -->
+						
+						<h6><span>Tags</span></h6>
+						<p>Technology, Entrepreneurial Transitions, Fund III, Current</p>
+						
+					</div>
+		
+				
+				</div>
+				
+				
+			</div>
+			
+	
+		<!-- {exp:channel} END LOOP -->
+			
+			
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END SINGLE ENTRY -->
+
+				
+	
+	
+		<!-- START FOOTER 
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+
+		<!-- THIS FOOTER REPEATS ON ALL PAGES AND TAGS ARE LOW VARS (CALL TO ACTION PANEL) -->
+	
+		<footer class="text-center wow fadeIn" data-wow-delay="{lv_wow_delay}ms">
+			
+			<div class="row expanded">
+				
+				<h3>{lv_cta_head}</h3>
+				
+				<p>
+					{lv_cta_phone}
+					<span class="show-for-small-only"><br></span>
+					<span class="bullet">&bull;</span>
+					<a href="mailto:{lv_cta_email}">{lv_cta_email}</a>
+				</p>
+			
+			</div>
+			
+			<div class="row logo">
+				
+				<a href="{site_url}"></a>
+				
+			</div>
+			
+		</footer>
+		
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END FOOTER -->
+
+
+	
+	
+		<!-- font scripts
+		=========================================================================================== -->
+	
+		<script src="https://use.typekit.net/rjh8jhj.js"></script>
+		
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	
+	
+	
+	
+		<!-- app js
+		=========================================================================================== -->
+	
+		<script src="_assets/js/min/app-min.js"></script>
+	
+	
+	
+	
+	</body>
+	
+
+
+
+</html>
+

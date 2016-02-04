@@ -1,0 +1,329 @@
+// background video head 
+
+.desktop-intro-block {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	box-sizing: border-box;
+    margin: 0;
+	width: 100%;
+	height: 65vh;
+	min-height: 100%;
+	z-index: 0;
+    background: url(../videos/sample2.jpg) no-repeat center center;
+    background-size: cover; 
+	text-decoration: none;
+
+	@include breakpoint(medium) {
+		height: 116vh;
+	}
+
+}
+
+
+.desktop-video-wrap {
+	display: none;
+	
+	@include breakpoint(large) {
+		display: block;
+	}
+	
+}
+
+.mobile-static-wrap {
+	display: block;
+	@include breakpoint(large) {
+		display: none;
+	}
+}
+
+
+.text-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 60vh;
+    margin: 0;
+	width: 100%;
+	z-index: 100;
+
+	@include breakpoint(medium) {
+		height: 90vh;
+	}
+
+}
+
+.valign {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);	
+}
+
+.video-container { 
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left:0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+}
+
+.video-overlay-tint {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left:0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    background-color: $warm-gray-1;
+    opacity: 0.5;
+}
+
+video#bgvid { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+video#bgvid {
+    transition: 1s opacity;
+}
+.stopfade { opacity: .5; }
+
+
+
+.video-shim-skew {
+	position: relative;
+	background-color: #fff;
+    z-index: 100;
+}
+
+.video-shim-skew:before {
+	background: inherit;
+    top: -4.5rem;
+    content: '';
+    display: block;
+    height: 75%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: skewY(-5deg);
+    transform-origin: 50%;
+}
+
+.video-shim-skew .headline {
+	position: relative;
+	padding: 2vh 5vw 7vh 5vw;
+	z-index: 200;
+	
+	@include breakpoint(large) {
+		padding: 3vh 10vw 7vh 10vw;
+	}
+
+	@include breakpoint(xlarge) {
+		padding: 7vh 14vh 8vh 14vw;
+	}
+
+}
+
+
+
+
+
+/*
+html {
+	@include breakpoint(medium) {
+    	background: url(../videos/sample.jpg) #000 no-repeat center center fixed;
+	}
+}
+*/
+
+#bgvid {
+	
+    display: none;
+	
+	@include breakpoint(large) {
+		display: block;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// background video head 
+
+.desktop-intro-blockx {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	box-sizing: border-box;
+    margin: 0;
+	width: 100%;
+	height: 65vh;
+	min-height: 100%;
+	z-index: 0;
+    background: url(../videos/sample2.jpg) no-repeat center center;
+    background-size: cover; 
+	text-decoration: none;
+
+	@include breakpoint(medium) {
+		height: 100vh;
+	}
+
+}
+
+
+.desktop-video-wrapx {
+	display: none;
+	
+	@include breakpoint(large) {
+		display: block;
+	}
+	
+}
+
+.mobile-static-wrapx {
+	display: block;
+	@include breakpoint(large) {
+		display: none;
+	}
+}
+
+
+
+
+.slant-footx {
+	position: absolute;
+	content: '';
+	left: 0px;
+	right: 0px;
+	bottom: 0;
+	border-width: 1rem 50vw;
+	margin-left: -20px;
+	margin-right: 0;
+	border-style: solid;
+	border-color: transparent #fff #fff transparent;
+	box-sizing: border-box;
+	
+	// change angle based on width so it does not flatten out
+
+	@include breakpoint(medium) {
+		border-width: 1.5rem 50vw;
+	}
+
+	@include breakpoint(large) {
+		border-width: 2rem 50vw;
+	}
+
+	@include breakpoint(xlarge) {
+		border-width: 2.5rem 50vw;
+	}
+}
+
+
+
+
+.text-containerx {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 60vh;
+    margin: 0;
+	width: 100%;
+	z-index: 100;
+
+	@include breakpoint(medium) {
+		height: 90vh;
+	}
+
+}
+
+.valignx {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);	
+}
+
+.video-containerx { 
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left:0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+}
+
+.video-overlay-tintx {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left:0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    background-color: $warm-gray-1;
+    opacity: 0.5;
+}
+
+video#bgvid { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+video#bgvid {
+    transition: 1s opacity;
+}
+.stopfade { opacity: .5; }
+
+
+

@@ -1,0 +1,231 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+
+
+	
+	<head>
+		
+		
+		
+		
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+		<!-- TITLE STATIC ON THIS PAGE
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+
+		<title>Team | TorQuest</title>
+
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END TITLE -->
+
+
+
+	
+		<!-- SEO ADD-ON
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+
+		<meta name="description" content="">
+		<meta name="robots" content="noodp">
+		<link rel="canonical" href="http://www.torquest.com/">
+		<meta property="og:locale" content="en_CA">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="">
+		<meta property="og:description" content="">
+		<meta property="og:url" content="{site_url}{current_path}">
+		<meta property="og:site_name" content="TorQuest">
+
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END SEO -->
+	
+	
+	
+
+		<!-- styles
+		=========================================================================================== -->
+	
+		<link rel="stylesheet" href="_assets/css/app.css">
+			
+			
+		<!-- favicons
+		=========================================================================================== -->
+	
+		<link rel="icon" type="image/png" href="_assets/favicon/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="_assets/favicon/favicon-16x16.png" sizes="16x16" />
+			
+	</head>
+		
+
+
+
+	<body>
+	
+		
+	
+			
+		<!-- START GLOBAL NAV 
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+		
+		<!-- "ACTIVE" CLASS GETS APPLIED TO CURRENT PAGE LINK -->
+
+		<nav class="navbar">
+				
+			<a id="brand" href="{site_url}"></a>
+		
+			<ul class="mobilenav">
+				<li><a class="active" href="{site_url}">Home</a></li>
+				<li><a href="#">Strategy</a></li>
+				<li><a href="#">Stories</a></li>
+				<li><a href="#">Team</a></li>
+				<li><a href="#">Investments</a></li>
+				<li><a href="#">News</a></li>
+				<li><a href="#">Contact Us</a></li>
+				<li><a href="#">Partner Login</a></li>
+			</ul>
+			
+			<a href="javascript:void(0)" id="hamburger" class="icon">
+				<div class="hamburger">
+					<div class="menui top-menu"></div>
+					<div class="menui mid-menu"></div>
+					<div class="menui bottom-menu"></div>
+				</div>
+			</a>
+								
+		</nav>
+		
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END GLOBAL NAV -->
+
+	
+	
+	
+		<!-- START HEADLINE FROM LV 
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+		
+	     <div class="block block-skew dark-gray content dark">
+		    
+			<h1>{lv_team_page_headline}</h1>
+		    
+	    </div>
+		
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END HEADLINE -->
+
+
+	
+	
+		<!-- STATIC HEADER -->
+		<div class="block padding-15-0-7-0 text-center content light">
+	
+			<h5><span>Our Team</span></h5>
+			
+		</div>
+	
+	
+	
+	
+		<div class="region-team-headshots">
+			
+			
+			<div class="row collapse row small-up-1 medium-up-2 large-up-3 text-center">
+				
+				
+				<!-- START TEAM MEMBERS 
+				/////////////////////////////////////////////////////////////////////////////////////////// -->
+		
+				<!-- HEADSHOTS AND NAMES ARE RELATIONSHIPS WITH team_bios CHANNEL -->
+				<!-- DISPLAYS IN ORDER THAT CLIENT DECIDES IN LV GRID -->
+				<!-- FOR SQUARE HEADSHOTS, NO RESIZE NEEDED -->
+				
+				
+				<!-- {lv_team_members} START LOOP-->
+				
+				<div class="column wow fadeIn" data-wow-delay="{lv_wow_delay}ms">
+					<a href="{site_url}team/bio/{lv_team_members:url_title}">
+						<img src="_assets/img/{lv_team_members:bio_headshot_square}" alt="{lv_team_members:bio_first_name} {lv_team_members:bio_last_name}">  
+						<span class="gradient-overlay">
+							<span class="bio-name">
+								{lv_team_members:bio_first_name} {lv_team_members:bio_last_name}
+							</span>
+						</span>
+					</a>
+				</div>
+				
+				<!-- {lv_team_members} END LOOP-->
+				
+
+				<!-- //////////////////////////////////////////////////////////////////////////////////////
+				END TEAM MEMBERS -->
+			
+			</div>
+	
+		
+		</div>
+
+				
+	
+	
+		<!-- START FOOTER 
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+
+		<!-- THIS FOOTER REPEATS ON ALL PAGES AND TAGS ARE LOW VARS (CALL TO ACTION PANEL) -->
+	
+		<footer class="text-center wow fadeIn" data-wow-delay="{lv_wow_delay}ms">
+			
+			<div class="row expanded">
+				
+				<h3>{lv_cta_head}</h3>
+				
+				<p>
+					{lv_cta_phone}
+					<span class="show-for-small-only"><br></span>
+					<span class="bullet">&bull;</span>
+					<a href="mailto:{lv_cta_email}">{lv_cta_email}</a>
+				</p>
+			
+			</div>
+			
+			<div class="row logo">
+				
+				<a href="{site_url}"></a>
+				
+			</div>
+			
+		</footer>
+		
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END FOOTER -->
+
+
+	
+	
+		<!-- font scripts
+		=========================================================================================== -->
+	
+		<script src="https://use.typekit.net/rjh8jhj.js"></script>
+		
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	
+	
+	
+	
+		<!-- app js
+		=========================================================================================== -->
+	
+		<script src="_assets/js/min/app-min.js"></script>
+	
+	
+	
+	
+	</body>
+	
+
+
+
+</html>
+

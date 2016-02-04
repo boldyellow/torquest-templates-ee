@@ -1,0 +1,125 @@
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+  
+   CLOSE BAR 
+   
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+
+
+
+// opacity variable ....................................................
+
+$hover-opacity: 0.75;
+
+
+
+
+// close bar ...........................................................
+
+.close-bar {
+	background-color: $dark-gray;
+}
+
+.close-bar .row {
+	background-color: $dark-gray;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	height: 3rem;
+	max-width: 75rem;
+
+	@include breakpoint(medium) {
+		height: 7rem;
+	}
+}
+
+.close-bar .left a {
+	color: #fff;
+	display: inline-block;
+	padding: 1rem 1rem 1rem 1.5rem;
+	background-image: url('../img/btn-close.svg');
+	background-repeat: no-repeat;
+	background-size: 1rem 1rem;
+	background-position: 0 50%;
+	transition: opacity 0.375s linear;
+}
+
+.close-bar .left a:hover {
+	opacity: $hover-opacity;
+}
+
+.close-bar .right {
+	text-align: right;
+	color: $warm-gray-3;
+}
+
+.close-bar .right span {
+	display: inline-block;
+	padding: 0.5rem 0;
+	border-bottom: 1px solid $warm-gray-3;
+}
+
+
+
+
+// close bar links .....................................................
+
+.close-bar .right a {
+	color: #fff;
+	transition: opacity 0.375s linear;
+}
+
+.close-bar .right a:hover {
+	opacity: $hover-opacity;
+}
+
+.close-bar .right a.prev {
+	padding: 0 1rem;
+	background-image: url('../img/arrow-left-wht.svg');
+	background-repeat: no-repeat;
+	background-size: 1rem 1rem;
+	background-position: 0 50%;
+
+	@include breakpoint(medium) {
+		padding: 0 1rem 0 1.5rem;
+	}
+
+}
+
+.close-bar .right a.prev:before {
+	display: none;
+	content: 'Previous';
+
+	@include breakpoint(medium) {
+		display: inline-block;
+	}
+
+}
+
+.close-bar .right a.next {
+	padding: 0 1rem;
+	background-image: url('../img/arrow-right-wht.svg');
+	background-repeat: no-repeat;
+	background-size: 1rem 1rem;
+	background-position: 100% 50%;
+
+	@include breakpoint(medium) {
+		padding: 0 1.25rem 0 1.5rem;
+	}
+
+}
+
+.close-bar .right a.next:before {
+	display: none;
+	content: 'Next';
+	
+	@include breakpoint(medium) {
+		display: inline-block;
+	}
+
+}
+

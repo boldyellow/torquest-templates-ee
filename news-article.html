@@ -1,0 +1,287 @@
+doctype html>
+<html class="no-js" lang="en">
+
+
+
+	
+	<head>
+		
+		
+		
+		
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+		<!-- TITLE STATIC ON THIS PAGE
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+
+		<title>News Article | TorQuest</title>
+
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END TITLE -->
+
+
+
+	
+		<!-- SEO ADD-ON
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+
+		<meta name="description" content="">
+		<meta name="robots" content="noodp">
+		<link rel="canonical" href="http://www.torquest.com/">
+		<meta property="og:locale" content="en_CA">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="">
+		<meta property="og:description" content="">
+		<meta property="og:url" content="{site_url}{current_path}">
+		<meta property="og:site_name" content="TorQuest">
+
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END SEO -->
+	
+	
+	
+
+		<!-- PRELOADER HEADER STYLE ONLY ON SELECT TEMPLATES 
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+		
+		<!-- home, stories/company, team/bios, investments/company, news/article -->
+	
+		<style>
+			#preloader {
+				position: fixed;
+				left: 0;
+				top: 0;
+				z-index: 9999;
+				width: 100%;
+				height: 100%;
+				overflow: visible;
+				background-color: #151F25;
+				background-image: url(_assets/img/brand-tag-wht.svg);
+				-webkit-background-size: 200px 74px;
+				background-size: 200px 74px;
+				background-repeat: no-repeat;
+				background-position: center center;
+			}
+		</style>
+	
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END PRELOADER STYLE -->
+
+
+
+
+		<link rel="stylesheet" href="_assets/css/app.css">
+			
+			
+			
+			
+		<!-- favicons
+		=========================================================================================== -->
+	
+		<link rel="icon" type="image/png" href="_assets/favicon/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="_assets/favicon/favicon-16x16.png" sizes="16x16" />
+			
+
+
+
+	</head>
+		
+
+
+
+	<body class="sham-modal">
+	
+		
+		
+	
+		<!-- PRELOADER ONLY ON SELECT TEMPLATES 
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+		
+		<!-- home, stories/company, team/bios, investments/company, news/articleK -->
+	
+		<div id="preloader"></div>
+	
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END PRELOADER -->
+	
+		
+		
+	
+		<div class="close-bar">
+			
+			<div class="row">
+			
+			
+				<div class="medium-4 columns left">
+					<a href="{site_url}team">Close</a>
+				</div>
+				
+								
+				<!-- PAGINATION 
+				/////////////////////////////////////////////////////////////////////////////////////////// -->
+				
+				<!-- THIS NEEDS TO USE PREV/NEXT PAGINATION BETWEEN ENTRIES IN team_bios CHANNEL -->
+				<!-- HIDE PREV ON FIRST ENTRY AND HIDE NEXT ON LAST ENTRY-->
+
+				<div class="medium-8 columns right">
+					<a class="prev" href="{site_url}news/article/###-PREV-###"></a>
+					<a class="next" href="{site_url}news/article/###-NEXT-###"></a>
+				</div>
+				
+				<!-- //////////////////////////////////////////////////////////////////////////////////////
+				END PAGINATION -->
+				
+				
+			</div>
+								
+		</div>
+
+		
+	
+	
+		<!-- START SINGLE ENTRY FROM news_articles CHANNEL 
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+		
+		
+		<!-- {exp:channel} START LOOP -->	
+		
+		
+		<div class="block news-article padding-7-0-7-0 content light">
+			
+			
+			<div class="row text-center">
+				
+				<!-- ARTICLE HEADLINE AND DATE -->
+				<div class="medium-10 medium-centered columns">
+					
+					<h5>{article_date}</h5>
+					<h1>{article_headline}</h1>
+				
+				</div>
+					
+			</div>
+			
+			
+			<div class="row">
+				
+				<!-- ARTICLE INTRO AND BODY TEXT -->
+				
+				<div class="medium-7 medium-push-5 columns">
+					
+					{article_intro_text}
+										
+					<div class="reduced-text">
+							
+						{article_body_text}
+						
+					</div>
+						
+				</div>
+				
+				<div class="medium-5 medium-pull-7 large-4 large-offset-1 large-pull-7 columns sidebar reduced-text">
+					
+					<h6><span>Media Contacts</span></h6>
+					
+					
+					<!-- START GRID ROWS FOR ARTICLE CONTACTS (CAN BE MORE THAN ONE) -->
+					
+					{article_contacts}
+				
+						<p>
+							<!-- PRECEED WITH CONDITIONAL FOR contacts_company -->
+							{article_contacts:contacts_company} <br>
+							
+							<!-- PRECEED WITH CONDITIONAL FOR contacts_name -->
+							{article_contacts:contacts_name} <br>
+							
+							<!-- PRECEED WITH CONDITIONAL FOR contacts_title -->
+							{article_contacts:contacts_title} <br>
+							
+							<!-- PRECEED WITH CONDITIONAL FOR contacts_email -->
+							{article_contacts:contacts_email} <br>
+							
+							<!-- PRECEED WITH CONDITIONAL FOR contacts_phone -->
+							{article_contacts:contacts_phone} <br>
+							
+							<!-- PRECEED WITH CONDITIONAL FOR contacts_url -->
+							{article_contacts:contacts_url} <br>
+					
+						</p>
+						
+					{/article_contacts}
+					
+					<!-- END GRID ROWS FOR ARTICLE CONTACTS -->
+
+				</div>
+
+			</div>
+			
+		</div>
+
+				
+	
+	
+		<!-- START FOOTER 
+		/////////////////////////////////////////////////////////////////////////////////////////// -->
+
+		<!-- THIS FOOTER REPEATS ON ALL PAGES AND TAGS ARE LOW VARS (CALL TO ACTION PANEL) -->
+	
+		<footer class="text-center wow fadeIn" data-wow-delay="{lv_wow_delay}ms">
+			
+			<div class="row expanded">
+				
+				<h3>{lv_cta_head}</h3>
+				
+				<p>
+					{lv_cta_phone}
+					<span class="show-for-small-only"><br></span>
+					<span class="bullet">&bull;</span>
+					<a href="mailto:{lv_cta_email}">{lv_cta_email}</a>
+				</p>
+			
+			</div>
+			
+			<div class="row logo">
+				
+				<a href="{site_url}"></a>
+				
+			</div>
+			
+		</footer>
+		
+		<!-- //////////////////////////////////////////////////////////////////////////////////////
+		END FOOTER -->
+
+
+	
+	
+		<!-- font scripts
+		=========================================================================================== -->
+	
+		<script src="https://use.typekit.net/rjh8jhj.js"></script>
+		
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	
+	
+	
+	
+		<!-- app js
+		=========================================================================================== -->
+	
+		<script src="_assets/js/min/app-min.js"></script>
+	
+	
+	
+	
+	</body>
+	
+
+
+
+</html>
+

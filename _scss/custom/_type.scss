@@ -1,0 +1,454 @@
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+  
+   SITE TYPOGRAPHY 
+   
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+
+
+
+// reduce flash of unstyled text loading typekit........................
+
+.wf-loading h1 {
+	visibility: hidden;
+}
+
+.wf-active h1 {
+	visibility: visible;
+}
+
+
+
+
+// heads: h1 ...........................................................    
+
+h1 {
+    font-family: "adobe-caslon-pro",serif;
+	font-size: 2.2rem;
+    
+	@include breakpoint(medium) {
+   		font-size: 7.5vw;
+   		letter-spacing: -0.1rem;
+	}
+	@include breakpoint(large) {
+   		letter-spacing: -0.1rem;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 6rem;
+	}
+}
+
+.sham-modal h1 {
+	
+	@include breakpoint(medium) {
+		font-size: 7.5vw;
+	}
+	@include breakpoint(large) {
+		font-size: 6.5vw;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 5rem;
+	}
+}
+
+.news-highlights h1,
+.news-article h1 {
+	
+	@media screen and (max-width: 600px) {
+		font-size: 2.2rem;
+	}
+	@media screen and (min-width: 601px) and (max-width: 767px) {
+		font-size: 3rem;
+	}
+	@include breakpoint(large) {
+		font-size: 6.5vw;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 5rem;
+	}
+}
+
+
+.desktop-video-wrap h1,
+.mobile-static-wrap h1 {
+	font-style: italic;
+	color: #fff;
+}
+
+.region-ideals h1 {
+	font-size: 3.5rem;
+    
+	@include breakpoint(medium) {
+   		font-size: 12.75vw;
+	}
+	@include breakpoint(large) {
+   		font-size: 12.25vw;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 10rem;
+	}
+}
+
+
+
+
+// heads: h2-h6 ...........................................................    
+
+h2 {
+	font-family: "adobe-caslon-pro",serif;
+
+	@media screen and (max-width: 600px) {
+		font-size: 2.2rem;
+	}
+	@media screen and (min-width: 601px) and (max-width: 767px) {
+		font-size: 3rem;
+	}
+	@include breakpoint(large) {
+		font-size: 6.5vw;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 5rem;
+	}
+}
+
+h3 {
+	font-family: "adobe-caslon-pro",serif;
+	font-size: 4.03vmax;
+	line-height: 1.2;
+   
+	@include breakpoint(medium) {
+		font-size: 5.3vw;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 4rem;
+	}
+}
+
+h4 {
+	color: $warm-gray-2;
+	font-family: "adobe-caslon-pro",serif;
+	padding-bottom: 0.5rem;
+	font-size: 1.6rem;
+	
+	@include breakpoint(medium) {
+		font-size: 2rem;
+	}
+	@include breakpoint(large) {
+		font-size: 2.1rem;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 2.2rem;
+	}
+	
+}
+
+// adds rule below h4 with span
+
+h4 span {
+	display: inline-block;
+	margin-bottom: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid $warm-gray-2;
+}
+
+h4:not(:first-child) {
+	margin-top: 2.5rem;
+}
+
+h5 {
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	color: $warm-gray-2;
+	font-size: 1.2rem;
+
+	@include breakpoint(medium) {
+		font-size: 1.4rem;
+	}
+	@include breakpoint(large) {
+		font-size: 1.7rem;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 2rem;
+	}
+	
+}
+
+// adds rule below h5 with span
+
+h5 span {
+	display: inline-block;
+	margin-bottom: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid $warm-gray-2;
+}
+
+h6 {
+	color: $warm-gray-2;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	font-size: 1.1rem;
+
+	@include breakpoint(medium) {
+		font-size: 1.2rem;
+	}
+	@include breakpoint(large) {
+		font-size: 1.3rem;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 1.4rem;
+	}
+	
+}
+
+// adds rule below h6 with span
+
+h6 span {
+	display: inline-block;
+	margin-bottom: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid $warm-gray-2;
+}
+
+.sidebar h6 {
+	margin-top: 0.5rem;
+}
+
+
+
+
+// blockquote ............................................................... 
+
+blockquote {
+	font-family: "adobe-caslon-pro",serif;
+	font-style: italic;
+	margin-top: 2rem;
+	margin-bottom: 0;
+	font-size: 2rem;
+	line-height: 1.35;
+	padding: 0;
+   
+	@include breakpoint(medium) {
+		font-size: 2.5rem;
+		padding: 0 5vw;
+	}
+	@include breakpoint(large) {
+		font-size: 3rem;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 3.75rem;
+	}
+
+}
+
+blockquote + h6 {
+	margin-top: 1.5rem;
+
+	@include breakpoint(medium) {
+		margin-top: 1.75rem;
+	}
+	@include breakpoint(large) {
+		margin-top: 2rem;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 1.4rem;
+	}
+	
+}
+
+
+
+// small caps ..........................................................
+
+.small-caps {
+    font-family: "adobe-caslon-pro",serif;
+	text-transform: uppercase;
+	font-size: 1.6rem;
+	letter-spacing: 0.2rem;
+	margin-top: 0.2rem;
+	color: #fff;
+   
+	@include breakpoint(medium) {
+		font-size: 2.1rem;
+	}
+	@include breakpoint(large) {
+		font-size: 2.6rem;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 3.1rem;
+	}
+}
+
+
+
+
+// paragraph ...........................................................
+
+p, li {
+
+	font-size: 1.2rem;
+	line-height: 1.5;
+
+	@include breakpoint(medium) {
+		font-size: 1.4rem;
+	}
+	@include breakpoint(large) {
+		font-size: 1.5rem;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 1.6rem;
+	}
+	
+}
+
+.region-glance p {
+
+	font-size: 1.2rem;
+
+	@include breakpoint(medium) {
+		font-size: 1.4rem;
+	}
+	@include breakpoint(large) {
+		font-size: 1.5rem;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 2.2rem;
+	}
+	
+}
+
+.reduced-text p,
+.reduced-text li, 
+p.reduced-text,
+li.reduced-text {
+	
+	font-size: 1rem;
+
+	@include breakpoint(medium) {
+		font-size: 1.15rem;
+	}
+	@include breakpoint(large) {
+		font-size: 1.3rem;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 1.45rem;
+	}
+	
+}
+
+small {
+	font-size: 1rem;
+}
+
+// paragraph links
+
+p a {
+	color: $warm-gray-1;
+	transition: color 0.375s linear;
+	&:hover {
+		color: #000;
+	}
+}
+
+
+
+
+// custom size for text list bullets, yup ..............................
+
+.block li {
+	list-style: none;
+}
+
+.block li:before {
+  content: '\2022';
+  font-size: 1rem;
+  display: inline-block;
+  margin-top: -0.5rem;
+  padding-right: 0.85rem;
+  margin-left: -1.25rem;
+  vertical-align: middle;
+}
+
+
+
+
+// links with right arrow ..............................................
+
+a.view-more {
+	display: inline-block;
+	margin-top: 1.4rem;
+	padding: 0.25rem 2rem 0 0;
+	color: #000;
+	opacity: 0.5;
+	border-top: 1px solid #151f25;
+	background-image: url(../img/arrow-right-blk.svg);
+	background-repeat: no-repeat;
+	background-size: 21px 15px;
+	background-position: 100% 60%;
+	font-size: 1.2rem;
+	transition: opacity 0.375s linear;
+
+	@include breakpoint(medium) {
+		font-size: 1.4rem;
+		margin-top: 2rem;
+	}
+	@include breakpoint(large) {
+		font-size: 1.45rem;
+		margin-top: 2.4rem;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 1.5rem;
+	}
+
+}
+
+
+
+
+a.view-more:hover {
+	opacity: 1;
+}
+
+
+
+
+// link with left arrow (news) .........................................
+
+a.view-more.previous {
+	padding: 0.25rem 0 0 2rem;
+	margin-right: 1rem;
+	background-image: url(../img/arrow-left-blk.svg);
+	background-size: 21px 15px;
+	background-position: 0 60%;
+}
+
+a.view-more.next {
+	margin-left: 1rem;
+}
+
+
+
+// link with up arrow (news) ...........................................
+
+a.view-more.up {
+	background-image: url(../img/arrow-up-blk.svg);
+	background-size: 15px 21px;
+	background-position: 96% 60%;
+}
+
+
+
+
+// align view more center for small screens ............................
+
+@media screen and (max-width: 460px) {
+	
+	.small-link-center {
+		padding-top: 1.25rem;
+		text-align: center;
+	}
+	
+}
+
+
+
+

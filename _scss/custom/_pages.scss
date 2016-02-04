@@ -1,0 +1,562 @@
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+  
+   PAGE STYLES 
+   
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+
+
+
+/* SHARED ELEMENTS
+======================================================================== */
+
+
+// basic block .........................................................
+
+.block {
+	position: relative;
+}
+
+
+
+
+// skewed block with page head..........................................
+
+.block-skew {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	text-align: center;
+	padding-top: 3rem;
+	padding-left: 3vw;
+	padding-right: 3vw;
+	height: 40vh;
+
+	@include breakpoint(medium) {
+		padding-top: 4rem;
+	}
+
+	@include breakpoint(large) {
+		padding-top: 5rem;
+	}
+	
+	@include breakpoint(medium only landscape) {
+		height: 60vh;
+		padding-top: 6rem;
+	}
+
+}
+
+.block-skew:after {
+	background: inherit;
+	bottom: 0;
+	content: '';
+	display: block;
+	height: 90%;
+	left: 0;
+	position: absolute;
+	right: 0;
+	transform: skewY(-5deg);
+	transform-origin: 100%;
+	z-index: -1;
+
+	@include breakpoint(xxlarge) {
+		display: none;
+	}
+}
+
+.block-skew h1 {
+	color: #fff;
+}
+
+.block-bkgrd-img {
+	position: relative;
+	height: 66vw;
+ 	background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
+	@include breakpoint(medium) {
+		height: 36vw;
+	}
+	
+	@include breakpoint(xlarge) {
+		height: 27rem;
+	}
+	
+
+}
+
+
+
+
+
+
+
+
+
+// block backgrounds (colors in _settings)..............................
+
+.dark-gray {
+	background-color: $dark-gray;
+}
+
+.warm-gray-1 {
+	background-color: $warm-gray-1;
+}
+
+.warm-gray-2 {
+	background-color: $warm-gray-2;
+}
+
+.warm-gray-3 {
+	background-color: $warm-gray-3;
+}
+
+.warm-gray-4 {
+	background-color: $warm-gray-4;
+}
+
+.warm-gray-5 {
+	background-color: $warm-gray-5;
+}
+
+
+
+
+
+
+// flex box vertical center ............................................
+
+.vertical-center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	@include breakpoint(medium) {
+		flex-direction: row;
+	}
+
+}
+
+.vertical-center-row {
+	
+	@include breakpoint(medium) {
+	    display: flex;
+	    flex-direction: row;
+	    align-items: center;
+	    justify-content: center;
+	}
+}
+
+
+
+// so wide images don't fall short on mega screens .....................
+
+img.full-width {
+	width: 100%;
+}
+
+
+
+
+/* HOME PAGE
+======================================================================== */
+
+
+// at a glance .........................................................
+
+.region-glance {
+	border-top: 1px solid $warm-gray-3;
+}
+
+.region-glance > .row {
+	padding: 9vw 0 3vw 0;
+}
+
+.region-glance .glance-wrap .row {
+	background-color: $dark-gray;
+}
+
+// type
+
+.region-glance .glance-wrap .row h2 {
+	font-style: italic;
+	color: #fff;
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+// the h2 heads have shortened top/bot rules 
+
+.region-glance .glance-wrap h2:after {
+    content: '';
+    position: absolute;
+    top: -1.25rem;
+    bottom: -0.75rem;
+    left: 40%;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    right: 40%;
+    width: 20%;
+
+	@include breakpoint(medium) {
+    	left: 30%;
+	    right: 30%;
+	    width: 40%;
+	}
+}
+
+.region-glance .glance-wrap .row p {
+	color: #fff;
+	font-size: 1.25rem;
+
+	@include breakpoint(medium) {
+		font-size: 1.45rem;
+	}
+	@include breakpoint(large) {
+		font-size: 1.65rem;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 2.2rem;
+	}
+}
+
+// horizontal border
+
+.region-glance .glance-wrap .row:nth-of-type(2) {
+		
+	border-top: none;
+
+	@include breakpoint(medium) {
+		border-top: 1px solid #fff;
+	}
+}
+
+// horizontal border at small size
+
+.region-glance .glance-wrap .columns {
+	
+	padding: 3.5rem 1rem 1.5rem 1rem;
+	border-bottom: 1px solid $warm-gray-1;
+	
+	@include breakpoint(medium) {
+		padding: 11vw 5vw 9vw 5vw;
+		border-bottom: none;
+	}
+
+}
+
+// vertical borders:
+// using box shadow so we can overlap 1px borders
+// doing even left and odd right in case one is deeper than the other
+// heads stay aligned and don't jump with vertical center
+
+.region-glance .glance-wrap .columns:nth-of-type(odd) {	
+
+	@include breakpoint(medium) {
+		box-shadow: 1px 0 0 0 #fff;
+	}	    
+}
+
+.region-glance .glance-wrap .columns:nth-of-type(even) {
+		
+	@include breakpoint(medium) {
+		box-shadow: 1px 0 0 0 #fff inset;
+	}
+}
+
+
+// company investments grid ............................................
+
+.investments {
+	position: relative;
+	padding: 6vh 2.5vw;
+}
+
+
+
+
+/* STRATEGIES PAGE 
+======================================================================== */
+
+.region-strategies h1 {
+	color: $dark-gray;
+	
+	@include breakpoint(medium) {
+		color: #fff;
+	}
+	
+}
+
+.region-strategies h2 {
+	
+	margin-bottom: 1.5rem;
+	
+	@include breakpoint(medium) {
+		margin-bottom: 1rem;
+	}
+	@include breakpoint(large) {
+		margin-bottom: 2rem;
+	}
+
+}
+
+.region-strategies h6 {
+	
+	margin-top: 1.5rem;
+	
+	@include breakpoint(large) {
+		margin-top: 2rem;
+	}
+
+}
+
+
+
+
+/* STORIES: SINGLE ENTRY PAGE 
+======================================================================== */
+
+
+// head in image .......................................................
+
+.story-header h6 {
+	color: #fff;
+}
+
+.story-logo-vert-center img {
+	margin: 0;
+	position: absolute; 
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 50vw;
+	max-height: 50vw;
+	
+	@include breakpoint(medium) {
+		padding: 0;
+		max-width: 25vw;
+		max-height: 25vw;
+	}
+}
+
+
+
+
+/* TEAM: OVERVIEW PAGE 
+======================================================================== */
+
+
+// headshots ...........................................................
+
+.region-team-headshots{
+	
+	padding-bottom: 0;
+
+	@include breakpoint(medium) {
+	    padding-bottom: 3rem;
+	}
+	
+	@include breakpoint(large) {
+	    padding-bottom: 7rem;
+	}
+	
+}
+
+.region-team-headshots a {
+	position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.region-team-headshots a .gradient-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+    width: 100%;
+    height: 100%;
+	transition: all 0.375s linear;
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 25%,rgba(21,31,37,0.6) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#99151f25',GradientType=0 ); /* IE6-9 */
+	opacity: 1;
+
+	@include breakpoint(large) {
+		opacity: 0;
+	}
+}
+
+.region-team-headshots a:hover .gradient-overlay {
+
+	@include breakpoint(large) {
+		opacity: 1;
+	}
+}
+
+.region-team-headshots a .gradient-overlay .bio-name {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+    width: 100%;
+    z-index: 1000;
+    color: #fff;
+	font-family: "adobe-caslon-pro",serif;
+	font-size: 1.6rem;
+	line-height: 1.2;
+	padding: 0.5rem 1.5rem;
+
+	@include breakpoint(medium) {
+		font-size: 1.5rem;
+	}
+	@include breakpoint(large) {
+		font-size: 1.4rem;
+		padding: 0.75rem 2rem;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 1.6rem;
+	}
+}
+
+
+
+/* TEAM: SINGLE ENTRY (BIO) PAGE 
+======================================================================== */
+
+
+.team-bio-header {
+	background-color: $steel-blue;
+}
+
+
+.team-bio-header .medium-7 {
+	background-color: $dark-gray;
+	padding-bottom: 1rem;
+	
+	@include breakpoint(medium) {
+		background-color: transparent;
+		padding-bottom: 0;
+	}
+	
+}
+
+.team-bio-header h2 {
+	color: #fff;
+	text-align: center;
+	margin-top: 1.5rem;
+	
+	@include breakpoint(medium) {
+		text-align: left;
+		margin-top: 0;
+	}
+	
+}
+
+.team-bio-header h5 {
+	color: #fff;
+	text-align: center;
+	margin-top: 0.75rem;
+	
+	@include breakpoint(medium) {
+		margin-top: 1.5rem;
+		text-align: left;
+		margin-top: 0;
+	}
+	
+}
+
+.team-bio-text .sidebar {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	
+	@include breakpoint(medium) {
+		margin-top: 0.5rem;
+	}
+}
+
+
+
+
+/* NEWS: OVERVIEW PAGE 
+======================================================================== */
+
+
+// search field ........................................................
+
+.news-search .input-group-field {
+    height: 2.53rem;
+}
+
+.search-field,
+.search-field:focus {
+	background-color: $light-green;
+	border: 1px solid $light-green;
+	box-shadow: none;
+}
+
+.search-arrow {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: $dark-gray;
+	background-image: url('../img/arrow-right-wht.svg');
+	background-repeat: no-repeat;
+	background-size: 21px 15px;
+	background-position: 50% 50%;
+}
+
+
+// highlighted stories .................................................
+
+.news-highlights .row {
+	margin-bottom: 0.25rem;
+	background-color: $warm-gray-5;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+
+.news-highlights h1,
+.news-highlights h5,
+.news-article h1,
+.news-article h5 {
+	margin-bottom: 3rem;
+}
+
+.news-highlights h1 a {
+	color: $dark-gray;
+	&:hover {
+        color: $dark-gray;
+    }
+}
+
+.news-article .reduced-text h6 {
+	margin-bottom: 0.5rem;
+}
+
+
+
+
+/* NEWS: SINGLE ENTRY PAGE 
+======================================================================== */
+
+
+.news-article .sidebar p {
+	font-size: 1rem;
+
+	@include breakpoint(medium) {
+		font-size: 1.1rem;
+	}
+	@include breakpoint(large) {
+		font-size: 1.15rem;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 1.2rem;
+	}
+}
+
+
+
