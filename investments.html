@@ -142,7 +142,7 @@
 				
 				<div class="large-10 large-centered columns">
 					
-					
+								
 					<div class="parent-categories">
 						
 						<span>Sort By:</span>
@@ -156,6 +156,7 @@
 						<a data-foo="status" href="javascript:void(0)" class="parent-filter" target="status">Status</a>
 	
 					</div>
+					
 				
 				</div>
 				
@@ -182,10 +183,10 @@
 					
 					
 					<!-- THIS DIV IS FOR THE PERMANENT PARENT CAT FOR INDUSTRY -->		
-					<div id="child-industry" class="child-categories industry-list">
+					<div id="child-industry" class="child-categories industry-list" data-category="industry">
 						
 						<!-- LINKS FOR DYNAMIC CHILD CATS OF INDUSTRY -->
-						<a data-subcat="all" href="#">All</a>
+						<a data-subcat="all" href="#" class='all'>All</a>
 						<a data-subcat="technology" href="#">Technology</a>
 						<a data-subcat="genetics" href="#">Genetics</a>
 						<a data-subcat="consumer" href="#">Consumer</a>
@@ -195,10 +196,10 @@
 	
 	
 					<!-- THIS DIV IS FOR THE PERMANENT PARENT CAT FOR DEAL TYPE -->		
-					<div id="child-deal-type" class="child-categories">
+					<div id="child-deal-type" class="child-categories" data-category="deal-type">
 
 						<!-- LINKS FOR DYNAMIC CHILD CATS OF DEAL TYPE -->
-						<a data-subcat="all" href="#">All</a>
+						<a data-subcat="all" href="#" class='all'>All</a>
 						<a data-subcat="corporate-carve-outs" href="#">Corporate Carve-Outs</a>
 						<a data-subcat="entrepreneurs" href="#">Entrepreneurs</a>
 						<a data-subcat="management-buyout" href="#">Management Buyout</a>
@@ -208,23 +209,23 @@
 	
 	
 					<!-- THIS DIV IS FOR THE PERMANENT PARENT CAT FOR FUND -->		
-					<div id="child-fund" class="child-categories">
+					<div id="child-fund" class="child-categories" data-category="fund">
 						
 						<!-- LINKS FOR DYNAMIC CHILD CATS OF FUND -->
-						<a data-subcat="all" href="#">All</a>
-						<a data-subcat="fund-i-" href="#">Fund I</a>
-						<a data-subcat="fund-ii-" href="#">Fund II</a>
-						<a data-subcat="fund-iii-" href="#">Fund III</a>
+						<a data-subcat="all" href="#" class='all'>All</a>
+						<a data-subcat="i" href="#">Fund I</a>
+						<a data-subcat="ii" href="#">Fund II</a>
+						<a data-subcat="iii" href="#">Fund III</a>
 						<a data-subcat="harrington" href="#">Harrington</a>
 						
 					</div>
 					
 	
 					<!-- THIS DIV IS FOR THE PERMANENT PARENT CAT FOR STATUS -->		
-					<div id="child-status" class="child-categories">
+					<div id="child-status" class="child-categories" data-category="status">
 						
 						<!-- LINKS FOR DYNAMIC CHILD CATS OF STATUS -->
-						<a data-subcat="all" href="#">All</a>
+						<a data-subcat="all" href="#" class='all'>All</a>
 						<a data-subcat="current" href="#">Current</a>
 						<a data-subcat="realized" href="#">Realized</a>
 						
@@ -249,21 +250,37 @@
 		
 		<div id="panel-content" class="block padding-4-0-4-0 content light text-center wow fadeIn" data-wow-delay="{lv_wow_delay}ms">
 			
+			<!-- THIS IS FOR NO RESULTS, IF EVER HAPPENS -->
+			<div id="not-found">None found</div>
+			
 	
-			<div class="row investments child-list">
+			<div class="row investments child-list" id="item-container">
 				
 
 				<!-- {exp:channel SORT BY DATE DESC} START LOOP -->	
 		
 		
-					<!-- LINK TO COMPANY'S SINGLE ENTRY PAGE -->
+					<!-- LOGO LINK TO COMPANY'S SINGLE ENTRY PAGE -->
 					
-					<a href="{site_url}investments/company/{url_title}" class="logo-grid">
-						
-						<!-- COMPANY LOGO AND NAME FOR ALT TEXT -->
+					<a href="{site_url}investments/company/{url_title}" class="logo-grid" 
+						data-industry="{AAAA}"
+						data-deal-type="{BBBB}" 
+						data-fund="{CCCC}" 
+						data-status="{DDDD}" 
+						data-content="{entry_id}" 
+						data-date="{company_investment_date}">
 						<img src="_assets/img/{company_logo}" alt="{company_name}">
 					</a>
 					
+					<!-- CHILD CATEGORY DATA TAG EXAMPLES:
+						 data-industry="manufacturing" 
+						 data-deal-type="corporate-carve-outs, recapitalization"
+						 data-fund="ii"
+						 data-status="realized"
+						 data-content="(entry id)"
+						 data-date="(UNIX timestamp)"
+					-->
+
 
 				<!-- {/exp:channel} END LOOP -->
 					
@@ -331,21 +348,44 @@
 	
 	
 	
-		<!-- this page only js (REVISIONS TO COME)
+		<!-- this page only js
 		=========================================================================================== -->
 	
 	    <script>
 			// display row of child filter buttons from parent button
 			$('.child-categories').hide();
-			$('.industry-list').show();
+			$('.industry-list').hide();
 			$('.parent-filter').click(function (e) {
+				var target=$(this).attr('target');
+	
 				$('.active').removeClass('active');
 			    $(this).addClass('active');
 			    $('.child-categories').hide();
-			    $('#child-' + $(this).attr('target')).show();
-			    showParentCat($(this).attr('data-foo'));
+			    var subcats = $('#child-' + target);
+			    subcats.show();
+				subcats.find('.all').addClass('active')
+			    sortItems(target);
 			    e.preventDefault();
 			});
+	
+			// hide the div for displaying no results
+			$('#not-found').hide();
+			$('.child-categories').click(function(e){
+				var category = $(this).attr('data-category');
+				var subcat = $(e.target).attr('data-subcat');
+	
+				$(this).find('.active').removeClass('active');
+				$(this).find('[data-subcat="' + subcat + '"]').addClass('active');
+				var visible = filterItems(category, subcat);
+				console.log(visible);
+				if (visible > 0) {
+					$('#not-found').hide();
+				} else {
+					$('#not-found').show();
+				}
+			    e.preventDefault();
+			})
+	
 	
 		</script>
 	
@@ -384,91 +424,59 @@
 	    </script>
 	    
 	    <script>
-		    // INITIALIZATION
-		    (function(){
-				window.SECTION_TEMPLATE = $('div.child-list')[0].outerHTML;
-				window.NO_RESULTS_TEMPLATE = '<div>NO RESULTS</div>';
-				window.DATA_KEYS = ['industry','deal-type','fund','status'];
-	
-				function getAllItems(){
-					return $('.company').toArray();
-				}
-				function gatherAllItemData() {
-					window.DATA = [];
-					getAllItems().forEach(function(elmt, index){
-						var itemData = {}, item=$(elmt);
-						itemData.html = elmt.outerHTML;
-						DATA_KEYS.map(function(key, index){
-							itemData[key] = item.attr('data-' + key);
-						});
-						DATA.push(itemData);
+		    /** on click of parent:
+		    		- add active to parent, add active to child all
+		    		- sort by parent cat then date desc
+		    		- detach and reattach to the visible #item-container
+		    	on click of child all:
+		    		- do the same as click of parent
+		    	on click of child ( not all)
+		    		- add class active to child and remove active from child all
+					- detach all, then add to visible and invisible container as relevant
+			*/
+			(function(){
+		    	var getAllItems = function(){ return $('.logo-grid'); }
+		    	var ASC = 1, DESC = -1;
+		    	var sortBy = function(attr, ORD){
+		    		var key='data-' + attr;
+		    		return function(a,b){
+			    		var a_attr = $(a).attr(key);
+			    		var b_attr = $(b).attr(key);
+		    			return (a_attr > b_attr)? ORD: ((a_attr == b_attr)? 0: -ORD);
+		    		}
+		    	}
+		    	var byDate = sortBy('date',DESC);
+		    	// GLOBAL
+		    	sortItems = function(category){
+		    		var byCategory = sortBy(category, ASC);
+		    		var byCategoryThenDate = function(a,b){
+		    			return byCategory(a,b) || byDate(a,b);
+		    		}
+		    		getAllItems().detach().sort(byCategoryThenDate).appendTo('#item-container');
+		    	}
+		    	// GLOBAL
+				filterItems = function(category, subcat){
+					if (!subcat) return; // clicked on container div, not on subcategory
+					if (subcat.toLowerCase() == 'all') {
+						sortItems(category);
+						return $('#item-container a').length;
+					}
+					var key = 'data-' + category;
+					var find = ',' + subcat + ',';
+					getAllItems().each(function(indx, elmt){
+						var cats = ',' + $(elmt).attr(key) + ',';
+						if (cats.indexOf(find) > -1){
+							$(elmt).detach().appendTo('#item-container');
+						} else {
+							$(elmt).detach().appendTo('#item-storage');
+						}
 					});
-				}
-				function gatherCatsAndSubCats(){
-					window.CATEGORIES = {};
-					DATA_KEYS.forEach(function(cat, indx){
-						CATEGORIES[cat] = $('#child-' + cat + ' a')
-							.map(function(index, subcat){ 
-								var elmt = $(subcat);
-								return {
-									value: elmt.attr('data-subcat'),
-									display: elmt.text()
-								}
-							})
-							.toArray();
-					})
-				}
-	
-				gatherAllItemData();
-				gatherCatsAndSubCats();
-	
-		    })();
+					return $('#item-container a').length;
+				};
+		
+			})()
+		
 	    </script>
-	    
-		<script>
-	
-			function makeSubcatHTML(parentCat, pcatValue, pcatDisplay){
-				var content = $(SECTION_TEMPLATE);
-				var title = content.find('.child-title');
-				title.html('<h6>' + pcatDisplay + '</h6>');
-				var logos = content.find('.logos');
-	
-				var logosHTML = DATA.filter(function(item, index){
-					return item[parentCat].indexOf(pcatValue) >= 0;
-				}).reduce(function(prev, curr){
-					return prev + curr.html;
-				}, "");
-				logosHTML = (logosHTML.length > 0)? logosHTML : NO_RESULTS_TEMPLATE;
-				logos.html(logosHTML);
-				return content[0].outerHTML;
-			}
-			function showParentCat(parentCat){
-				var contentHTML = CATEGORIES[parentCat].reduce(function(prev, curr){
-					if (curr.value === 'all') { return prev;}
-					return prev + makeSubcatHTML(parentCat, curr.value, curr.display);
-				}, '');
-				$('#panel-content').html(contentHTML);
-			}
-			function showSubCat(parentCat, pcatValue, pcatDisplay){
-				if (pcatValue === 'all'){
-					showParentCat(parentCat);
-					return;
-				}
-				$('#panel-content').html(makeSubcatHTML(parentCat, pcatValue, pcatDisplay));
-			};
-	
-	
-	
-			// Attach click event handlers
-			DATA_KEYS.forEach(function(item, index){
-				$('#child-' + item + ' a').click(function(e){
-					var me = $(this);
-					showSubCat(me.parent().attr('id').substr(6), me.attr('data-subcat'), me.text());
-					return false; // prevent scroll to top on click
-				});
-			})
-	
-		</script>
 		
 		
 	
